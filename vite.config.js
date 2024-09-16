@@ -26,7 +26,8 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: "build", // default: dist
+    //outDir: "build", // default: dist
+    outDir: "dist", // default: dist
     sourcemap: true,
 
     commonjsOptions: {
