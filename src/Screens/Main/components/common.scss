@@ -1,0 +1,8 @@
+.drag-zone {
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+  cursor: no-drop;
+}
+.no-drag-button {
+  -webkit-app-region: no-drag;
+}

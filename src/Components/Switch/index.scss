@@ -1,0 +1,63 @@
+@use "@assets/scss/variables.scss" as v;
+
+.switch-v2-container {
+  display: flex;
+  height: 28px;
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    border: 1px solid v.$whiteColor;
+    border-radius: 6px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    border-radius: 6px;
+    background-color: v.$whiteColor;
+    width: 40px;
+    transition: all 0.3s ease;
+  }
+
+  &.vi {
+    &::before {
+      transform: translateX(0);
+    }
+  }
+
+  &.en {
+    &::before {
+      transform: translateX(100%);
+    }
+  }
+
+  .block-language {
+    font-weight: 400;
+    font-size: 14px;
+    width: 40px;
+    cursor: pointer;
+    color: v.$primaryColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: v.$whiteColor;
+    transition: all 0.3s ease;
+    z-index: 2;
+
+    &.active {
+      color: v.$primaryColor;
+    }
+  }
+}

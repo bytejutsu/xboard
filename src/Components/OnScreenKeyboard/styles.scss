@@ -1,0 +1,51 @@
+.keyboard__container {
+  width: 60vw;
+  min-width: 600px;
+  max-width: 900px;
+  aspect-ratio: 6;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #151515;
+  padding: 6px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+  pointer-events: none;
+  &.show {
+    z-index: 100;
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+    pointer-events: all;
+  }
+}
+
+.simple-keyboard.myTheme1 {
+  background-color: #151515;
+  border-radius: 0;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.simple-keyboard.myTheme1 .hg-button {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1f1f22;
+  color: #e7e8eb;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+.simple-keyboard.myTheme1 .hg-button:active {
+  background: #56a6f5;
+  color: #e7e8eb;
+}
+
+#root .simple-keyboard.myTheme1 + .simple-keyboard-preview {
+  background: #56a6f5;
+}

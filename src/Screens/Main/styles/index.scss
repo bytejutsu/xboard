@@ -1,0 +1,27 @@
+.main__page {
+  width: 100vw;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  .canvas__container {
+    width: 100vw;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+
+    .canvas-container {
+      .upper-canvas {
+        &#pencil {
+          cursor: url("@assets/images/cursor-pencil.png") 0 20, default !important;
+        }
+        &#eraser {
+          cursor: url("@assets/images/eraser-icon.png") 6 18, default !important;
+        }
+        &#select {
+          cursor: url("@assets/images/cursor-select.png") 10 25, default !important;
+        }
+      }
+    }
+  }
+}

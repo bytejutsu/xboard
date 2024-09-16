@@ -1,0 +1,35 @@
+.header__container {
+  position: absolute;
+  height: 48px;
+  background-color: white;
+  box-shadow: 0px 8px 32px rgba(5, 0, 56, 0.08);
+  top: 10px;
+  left: 10px;
+  z-index: 99;
+  pointer-events: all;
+  padding: 2px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .logo-wrapper {
+    padding: 8px;
+  }
+  .divider {
+    margin: 8px;
+    height: 24px;
+    width: 0.5px;
+    background-color: #cdccd7;
+  }
+  .image-picker-button__container,
+  .export-btn {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+  }
+}

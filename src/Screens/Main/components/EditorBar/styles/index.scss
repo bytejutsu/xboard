@@ -1,0 +1,235 @@
+@use "@assets/scss/_variables.scss" as v;
+.editor-draggable-wrapper__container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100%;
+  background-color: transparent;
+  z-index: 99;
+  transition: background-color 0.2s ease-out;
+  pointer-events: none;
+  &.dragging {
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    transition: background-color 0.3s ease-in;
+  }
+
+  h1 {
+    position: absolute;
+    user-select: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    opacity: 0;
+    transition: background-color 0.2s ease-out;
+    &.show {
+      opacity: 1;
+      transition: background-color 0.2s ease-in;
+    }
+  }
+}
+.editorbar__container {
+  width: fit-content;
+  height: 55px;
+  transform: translateX(-50%);
+  background-color: white;
+  box-shadow: v.$boxShadowCommon;
+  border-radius: 4px;
+  z-index: 9;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 24px;
+  gap: 16px;
+  pointer-events: all;
+  transition: opacity 0.2s ease-in;
+  border: 1px solid #f0f0f0;
+  position: absolute;
+
+  &.hide {
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+    pointer-events: none;
+  }
+  .divider {
+    height: 100%;
+    width: 1px;
+    background-color: #f0f0f0;
+  }
+
+  .handle {
+    cursor: move;
+  }
+
+  .color-picker-button__container {
+    width: 40px;
+    aspect-ratio: 1;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+  .pointer {
+    cursor: pointer;
+  }
+  .btn-label {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+  .btn-label--red {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #ff0000;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  .editor__input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    min-height: 40px;
+
+    .ant-input-number {
+      min-width: 36px;
+      width: 36px;
+      text-align: right;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      color: #000000;
+      background-color: white;
+      transition: all 0.3s ease;
+
+      &:not(.ant-input-number-focused) {
+        border-width: 0;
+      }
+
+      &-input {
+        padding: unset;
+        text-align: center;
+      }
+    }
+
+    &-indicator {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      height: 40px;
+      width: 15px;
+
+      .up-icon,
+      .down-icon {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: v.$primaryColor;
+        }
+      }
+      .up-icon {
+        justify-content: flex-end;
+      }
+      .down-icon {
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
+.color-popup {
+  .ant-popover-inner {
+    padding: 0px;
+    .color-config__popup {
+      .color-picker__container {
+        padding: 12px;
+        .chrome-picker {
+          box-shadow: none !important;
+          input {
+            background: white !important;
+          }
+        }
+      }
+      .color-divider {
+        width: 100%;
+        height: 1px;
+        background-color: #eee;
+      }
+      .saved-color__container {
+        padding: 12px;
+        .label {
+          color: #333;
+          font-weight: 600;
+          font-size: 13px;
+        }
+        .delete-btn {
+          cursor: pointer;
+          max-height: 20px;
+          svg {
+            fill: red;
+          }
+        }
+        .list-color__container {
+          gap: 10px;
+          max-width: 225px;
+          .color__preview {
+            width: 36px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            cursor: pointer;
+            padding: 2px;
+            .color__inner {
+              width: 100%;
+              aspect-ratio: 1;
+              border-radius: 50%;
+            }
+            .add-color-btn {
+              width: 100%;
+              aspect-ratio: 1;
+              border-radius: 50%;
+              border: 1px solid #999;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              svg {
+                width: 16px;
+                height: 16px;
+                path {
+                  fill: #555;
+                }
+              }
+            }
+            &.active {
+              border: 2px solid;
+            }
+          }
+        }
+      }
+    }
+  }
+}

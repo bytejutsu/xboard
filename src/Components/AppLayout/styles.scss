@@ -1,0 +1,40 @@
+.layout__container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .layout__top {
+    height: 60px;
+    width: 100%;
+    background-color: #2c2c2c;
+    display: flex;
+  }
+
+  .layout__bottom {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    .layout__bottom--inner {
+      display: flex;
+      border-top: 1px solid #444444;
+      flex-direction: row;
+      width: 100%;
+      .layout__left {
+        height: 100%;
+        width: 200px;
+        background-color: #2c2c2c;
+        border-right: 1px solid #444444;
+      }
+      .layout__right {
+        height: 100%;
+        width: 200px;
+        background-color: #2c2c2c;
+        border-left: 1px solid #444444;
+      }
+      .layout__center {
+        flex: 1;
+        overflow: hidden;
+      }
+    }
+  }
+}

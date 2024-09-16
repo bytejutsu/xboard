@@ -1,0 +1,17 @@
+@use "@assets/scss/_variables.scss" as v;
+
+.IText-color {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  height: 45px;
+
+  .divider-color {
+    width: 24px;
+    height: 4px;
+    background-color: v.$blackColor;
+  }
+}

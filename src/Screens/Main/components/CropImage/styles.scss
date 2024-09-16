@@ -1,0 +1,100 @@
+.crop-modal__container {
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  border: 1px solid rgba(117, 117, 117, 0.4);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  transition: opacity 0.2s ease-out;
+  opacity: 0;
+  pointer-events: none;
+  &.show {
+    opacity: 1;
+    pointer-events: all;
+    z-index: 100;
+    transition: opacity 0.2s ease-in;
+  }
+  .header {
+    height: 40px;
+    background-color: #dadada;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0px 10px;
+    .close-btn {
+      cursor: pointer;
+    }
+  }
+  .content {
+    flex: 1;
+    position: relative;
+    .accept-btn,
+    .cancel-btn {
+      position: absolute;
+      z-index: 99;
+      width: 200px;
+      height: 40px;
+      left: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .accept-btn {
+      background-color: white;
+      transform: translateY(-100px);
+      border: 2px solid #4caf50;
+      border-radius: 6px;
+      color: #4caf50;
+      transform: translateX(calc(-50% + 120px)) translateY(-100px);
+    }
+    .cancel-btn {
+      border: 2px solid #f4511e;
+      border-radius: 6px;
+      color: #f4511e;
+      transform: translateX(calc(-50% - 120px)) translateY(-100px);
+      background-color: white;
+    }
+    .cropper-point {
+      width: 20px !important;
+      height: 20px !important;
+      border-radius: 50%;
+      opacity: 1 !important;
+      &.point-e {
+        right: -10px !important;
+      }
+      &.point-n {
+        top: -10px !important;
+      }
+      &.point-w {
+        left: -10px !important;
+      }
+      &.point-s {
+        bottom: -10px !important;
+      }
+      &.point-ne {
+        right: -10px !important;
+        top: -10px !important;
+      }
+      &.point-nw {
+        left: -10px !important;
+        top: -10px !important;
+      }
+      &.point-sw {
+        left: -10px !important;
+        bottom: -10px !important;
+      }
+      &.point-se {
+        bottom: -10px !important;
+        right: -10px !important;
+      }
+    }
+  }
+}

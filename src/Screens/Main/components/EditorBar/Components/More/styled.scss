@@ -1,0 +1,39 @@
+@use "@assets/scss/_variables.scss" as v;
+
+.container-popover-more {
+  box-shadow: v.$boxShadowCommon;
+
+  min-width: 233px;
+  background-color: v.$whiteColor;
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  .item-popover-more {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    color: v.$blackColor;
+    cursor: pointer;
+
+    &:hover {
+      color: v.$primaryColor;
+    }
+
+    &__title {
+      font-size: 14px;
+      line-height: 36px;
+      color: currentColor;
+      transition: all 0.3s ease;
+    }
+    &__shortcut {
+      font-size: 14px;
+      line-height: 36px;
+      color: v.$blackColor;
+    }
+  }
+}
